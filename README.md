@@ -3,8 +3,7 @@
 
 ####  Trupti Abnave, Abubeker Abdullahi, Wes Bailey
 
-<!DOCTYPE html>
-<meta charset="utf-8">
+
 <style>
 
 .axis text {
