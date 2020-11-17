@@ -15,8 +15,8 @@
 
     filteredData = {};
     filteredArray = [];
-    selectedKeys = ["BAC", "MSFT"];
-    // selectedKeys = allKeys;
+    // selectedKeys = ["BAC", "MSFT"];
+    selectedKeys = allKeys;
 
     var colorScheme = d3.scaleOrdinal()
                 .domain(filteredArray)

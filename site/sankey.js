@@ -1,4 +1,5 @@
-d3.sankey = function() {
+d3.sankey = function(nodeIdx) {
+  console.log("nodeIdx: ", nodeIdx);
     var sankey = {},
         nodeWidth = 24,
         nodePadding = 8,
@@ -19,14 +20,24 @@ d3.sankey = function() {
     };
   
     sankey.nodes = function(_) {
+      // nodes = [];
       if (!arguments.length) return nodes;
       nodes = _;
       return sankey;
     };
   
-    sankey.links = function(_) {
+    sankey.links = function(_, min, max) {
+      // links = [];
       if (!arguments.length) return links;
-      links = _;
+      links = [];
+      for (item in _) {
+        if (_[item].date >= min && _[item].date <= max) {
+          links.push(_[item]);
+        }
+      }
+      console.log("links count = ", links.length);
+
+      // links = _;
       return sankey;
     };
   
@@ -42,6 +53,7 @@ d3.sankey = function() {
       computeNodeBreadths();
       computeNodeDepths(iterations);
       computeLinkDepths();
+      // console.log("sankey: ", sankey);
       return sankey;
     };
   
@@ -51,20 +63,26 @@ d3.sankey = function() {
     };
   
     sankey.link = function() {
+
       var curvature = .5;
   
       function link(d) {
-        var x0 = d.source.x + d.source.dx,
-            x1 = d.target.x,
-            xi = d3.interpolateNumber(x0, x1),
-            x2 = xi(curvature),
-            x3 = xi(1 - curvature),
-            y0 = d.source.y + d.sy + d.dy / 2,
-            y1 = d.target.y + d.ty + d.dy / 2;
-        return "M" + x0 + "," + y0
-             + "C" + x2 + "," + y0
-             + " " + x3 + "," + y1
-             + " " + x1 + "," + y1;
+        try{
+          var x0 = d.source.x + d.source.dx,
+              x1 = d.target.x,
+              xi = d3.interpolateNumber(x0, x1),
+              x2 = xi(curvature),
+              x3 = xi(1 - curvature),
+              y0 = d.source.y + d.sy + d.dy / 2,
+              y1 = d.target.y + d.ty + d.dy / 2;
+          return "M" + x0 + "," + y0
+               + "C" + x2 + "," + y0
+               + " " + x3 + "," + y1
+               + " " + x1 + "," + y1;
+        } catch{
+          //pass
+
+        }
       }
   
       link.curvature = function(_) {
@@ -84,28 +102,33 @@ d3.sankey = function() {
         node.targetLinks = [];
       });
       links.forEach(function(link) {
-        // if(link.source != undefined && link.target != undefined){
-
           var source = link.source,
               target = link.target;
-          if (typeof source === "number") source = link.source = nodes[link.source];
-          if (typeof target === "number") target = link.target = nodes[link.target];
+
+          if (typeof source === "number") {
+            link.source = nodes[nodeIdx[link.source]];
+            source = link.source;  
+          }
+          
+          if (typeof target === "number") {
+            link.target = nodes[nodeIdx[link.target]];
+            target = link.target;
+          }
           source.sourceLinks.push(link);
           target.targetLinks.push(link);
-          
-        // }
-
-
-
       });
     }
   
     // Compute the value (size) of each node by summing the associated links.
     function computeNodeValues() {
       nodes.forEach(function(node) {
+        console.log("node: ", node);
+        console.log("node.sourceLinks.length: ", node.sourceLinks.length);
+        console.log("node.targetLinks.length: ", node.targetLinks.length);
+
         node.value = Math.max(
-          d3.sum(node.sourceLinks, value),
-          d3.sum(node.targetLinks, value)
+          node.sourceLinks.length,
+          node.targetLinks.length
         );
       });
     }
@@ -181,6 +204,8 @@ d3.sankey = function() {
       function initializeNodeDepth() {
         var ky = d3.min(nodesByBreadth, function(nodes) {
           return (size[1] - (nodes.length - 1) * nodePadding) / d3.sum(nodes, value);
+
+
         });
   
         nodesByBreadth.forEach(function(nodes) {
@@ -191,7 +216,7 @@ d3.sankey = function() {
         });
   
         links.forEach(function(link) {
-          link.dy = link.value * ky;
+          link.dy =  ky;
         });
       }
   
