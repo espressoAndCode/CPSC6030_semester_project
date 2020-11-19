@@ -1,3 +1,26 @@
+body {
+  background-color: rgb(231, 230, 228);
+}
+
+h4 {
+  margin-bottom: 40px;
+}
+
+
+
+img {
+  width: 90%;
+  margin: 10px;
+}
+
+#headline {
+  padding-top:  30px;
+  padding-bottom: 30px;;
+}
+
+.btn {
+  margin:  20px;
+}
 
 .line {
     fill: none;
@@ -34,4 +57,47 @@ pointer-events: all;
 
 /* .container-fluid {
   background-color: aquamarine;
+} */
+
+#updateStocks {
+  margin-left: 50px;
+}
+
+#aaplchk {
+  background-color: #0E79EB;
+}
+
+#amznchk {
+  background-color:#19C7D4;
+}
+
+#bacchk {
+  background-color: #04D924;
+}
+
+#msftchk {
+  background-color: #F75C01;
+}
+
+#tslachk {
+  background-color: #A60303;
+}
+
+.colorbox {
+
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.checkbox-inline {
+  padding-left: 5%;
+}
+
+
+/* 
+figcaption {
+  color: #333;
+  font: italic;
+  padding: 3px;
+  text-align: center;
 } */

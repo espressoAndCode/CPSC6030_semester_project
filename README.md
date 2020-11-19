@@ -3,3 +3,9 @@
 
 ####  Trupti Abnave, Abubeker Abdullahi, Wes Bailey
 
+Please feel free to clone the repo if you would like to play around with this project. We have included a development server for convenience. Just navigate to the root directory and type:
+
+```
+python3 server.py
+
+```

@@ -1,50 +1,138 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <div class="container-fluid col-md-10 col-md-offset-1">
-            <div class = "row">
-                <h1>Stock Volume</h1>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container-fluid col-md-10 col-md-offset-1">
+        <div class="row">
+            <h1 id="headline">Do Stocks Create News, or does the News Drive Stocks?</h1>
+            <h4>Trupti Abnave, Abubeker Abdullahi, Wes Bailey</h4>
+            
+        </div>
+        <div class="row">
+            <p>The stock market is the marketplace for buying and selling of stocks and bonds of different companies. An
+                investor or an individual invests in stocks to share in the ownership of that respective company stock.
+                It is a way to involve the public in the company and to raise needed capital.</p>
+            <p>Not everybody is familiar with the concept of the stock market. In general terms, it is an investing
+                market with profits and losses. But risk of getting into this market is high with all ups and downs of
+                the change in stock prices. </p>
+            <p>An individual can invest in one stock or many, and it's important for the individual to understand the
+                patterns of a stock market with respect to the company, its timings (year, months, days), and even which
+                time of the day to invest into the stock market.</p>
+        </div>
+
+        <div class="row">
+            <div class="col-5">
+                <p>We are trying to answer common questions like:</p>
+                <ul>
+                    <li>How do news and opinions affect the stock market?</li>
+                    <li>How do these patterns affect some of the top companies in the stock market?</li>
+                    <li>Are stocks cyclical, and if so what days or months are the best for investors?</li>
+                </ul>
+                <p>We have identified two datasets that were suitable for our purpose. Both of the datasets were obtained from the <a href="https://www.kaggle.com/">Kaggle</a> website, a resource for training and competitions built around data science.
+                </p>
+                <p>The first dataset is a <a href="https://www.kaggle.com/gennadiyr/us-equities-news-data">Historical News Archive</a>. This data contains news and opinion stories for the last 12 years of the US equities publicly traded on NYSE/NASDAQ which have a price higher than $10 per share. This data contains over 40,000 articles and includes the publisher, the date, and even links to the actual media. We thought that it would be interesting to look at the correlation between the number and types of stories, and the volatility of stocks. We were curious if there would be more stories before or after a sharp spike or decline in sales volume for a given stock.
+                </p>
             </div>
-            <div class="row">
-                <p>The graph below shows the volume of shares traded on the New York Stock Exchange for 5 of the largest companies in America between 2015 and 2020.</p>
+            <div class="col">
+                <figure class="figure float-right">
+                    <a href="/img/best5_stocks.png" target="_blank">
+                    <img src="/img/best5_stocks.png"
+                        alt="The Top 5 Stocks from the NYSE in terms of trading volume, 2015 - 2020"
+                        class="img-thumbnail img-fluid rounded float-right"></a>
+                    <figcaption class="figure-caption float-right">The Top 5 Stocks from the NYSE in terms of
+                        trading volume, 2015 - 2020</figcaption>
+                </figure>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <figure class="figure float-left">
+                    <a href="/img/best5_stories.png" target="_blank">
+                    <img src="/img/best5_stories.png"
+                        alt="Amount of News and Opinion Stories for the Top 5 Stocks, 2015 - 2020"
+                        class="img-thumbnail img-fluid rounded left"></a>
+                    <figcaption class="figure-caption float-left">Amount of News and Opinion Stories for the Top 5
+                        Stocks, 2015 - 2020</figcaption>
+                </figure>
+            </div>
+
+            <div class="col-5">
+                <p>Next, we found a very extensive resource on <a href="https://www.kaggle.com/qks1lver/amex-nyse-nasdaq-stock-histories">AMEX, NYSE, and NASDAQ stocks histories</a>. We quickly discovered that the sheer magnitude of this data made it unmanageable, and we decided to explore the set using Tableau in order to find the best way to focus in and reduce the quantity. We decided on a 5 year period from 2015 to 2020. </p>
+                <p>We sorted the data and determined the best 5 stocks that had a high volume of articles in the media source as well as fairly high trading volume. The decision to use volume as a comparative metric was chosen since the prices varied significantly, and trading volume seemed to be a reasonable way of normalizing the comparison. These two exploratory charts show the raw data from both sets. </p>
+                <p>There is a lot of information in the raw datasets, so we created the interactive graphs below in order to facilitate further exploration of the content. It's interesting to see how the volume of opinion and news fluctuates relative to trading of the stocks.</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <h1>Stock Volume</h1>
+        </div>
+        <div class="row">
+            <p>The graph below shows the volume of shares traded on the New York Stock Exchange for 5 of the largest
+                companies in America between 2015 and 2020. Select the stocks that you want to inspect and click the
+                'Update Stocks' button below.</p>
+            <br>
+        </div>
+        <div class="row text-center">
                 <label class="checkbox-inline">
-                    <input type="checkbox" id="aaplchk" value="option1"> Apple - AAPL
-                  </label>
-                  <label class="checkbox-inline">
-                    <input type="checkbox" id="amznchk" value="option2"> Amazon - AMZN
-                  </label>
-                  <label class="checkbox-inline">
-                    <input type="checkbox" id="bacchk" value="option3"> Bank of America - BAC
-                  </label>
-                  <label class="checkbox-inline">
-                    <input type="checkbox" id="msftchk" value="option4"> Microsoft - MSFT
-                  </label>
-                  <label class="checkbox-inline">
-                    <input type="checkbox" id="tslachk" value="option5"> Tesla - TSLA
-                  </label>
-
-
-
-
-
-                <div id="graph"></div>
-                <p>Select a time frame by dragging the gray bar above, then click the Update button to filter the news and opinion stories for that time frame.</p>
-            </div>
+                    <input type="checkbox" name="ticker" value="AAPL" checked> <b>Apple - AAPL</b>
+                    <div class="colorbox" id="aaplchk"></div>
+                </label>
+                <label class="checkbox-inline">
+                    <input type="checkbox" name="ticker" value="AMZN" checked><b>Amazon - AMZN</b>
+                    <div class="colorbox" id="amznchk"></div>
+                </label>
+                <label class="checkbox-inline">
+                    <input type="checkbox" name="ticker" value="BAC" checked> <b>Bank of America - BAC</b>
+                    <div class="colorbox" id="bacchk"></div>
+                </label>
+                <label class="checkbox-inline">
+                    <input type="checkbox" name="ticker" value="MSFT" checked><b>Microsoft - MSFT</b>
+                    <div class="colorbox" id="msftchk"></div>
+                </label>
+                <label class="checkbox-inline">
+                    <input type="checkbox" name="ticker" value="TSLA" checked><b>Tesla - TSLA</b>
+                    <div class="colorbox" id="tslachk"></div>
+                </label>
+        </div>
+        <div class="row">
             <div class="row text-center">
-                <button type="button" id="updateBtn" class="btn btn-primary btn-lg">Update</button>
+                <button type="button" id="updateStocks" class="btn btn-primary btn-lg">Update Stocks</button>
             </div>
-            <div class="row">
-                <h1>News Stories</h1>
-                <p>As you roll over the chart below, the publisher, date, and headline will show in a tooltip. You can click on the chart to open that story in another window.</p>
-                <div id="sankey"></div>
+            <div id="graph"></div>
+            <p>Select a time frame by dragging the ends of gray bar above, then click the 'Update Stories' button below to
+                filter the news and opinion stories for that time frame.</p>
+        </div>
+        <div class="row text-center">
+            <button type="button" id="updateStories" class="btn btn-primary btn-lg">Update Stories</button>
+        </div>
+        <div class="row">
+            <h1>News Stories</h1>
+            <p>As you roll over the chart below, the publisher, date, and headline will show in a tooltip. You can click
+                on the chart to open a link to that story in another window. There are over 40,000 stories in this data set spanning 5 years. It's much easier to navigate the chart below if you first zoom in on the top graph to narrow the time frame.</p>
+                <b>This chart can take a few seconds to update, so please be patient!</b>
+            <div id="sankey"></div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <h1>Resources</h1>
+                <p>D3.js is a tricky beast. We found some great resources to help us with ideas and guidance on code.</p>
+                <ul>
+                    <li><a href="https://bl.ocks.org/LemoNode/a9dc1a454fdc80ff2a738a9990935e9d" target="_blank">Multiline chart</a></li>
+                    <li><a href="https://bl.ocks.org/EfratVil/92f894ac0ba265192411e73f633a3e2f" target="_blank">Brush & Zoom line chart</a></li>
+                    <li><a href="https://bl.ocks.org/d3noob/5ba21a90a721cb19a47ff14c9513e43a" target="_blank">Sankey Diagram with D3 v5</a></li>
+                    <!-- <li><a href="">  </a></li>
+                    <li><a href="">  </a></li> -->
+                </ul>
             </div>
+        </div>
     </div>
-        <script src="https://d3js.org/d3.v5.min.js"></script>
-        <script src="script.js"></script>
-        <!-- <script src="sankey.js"></script> -->
-    </body>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="script.js"></script>
+</body>
 </html>
