@@ -14,9 +14,9 @@ Plaintext link: https://espressoandcode.github.io/CPSC6030_semester_project/
 
 ## References
 
-[Kaggle.com](https://www.kaggle.com/)
-[AMEX, NYSE, and NASDAQ stocks histories](https://www.kaggle.com/qks1lver/amex-nyse-nasdaq-stock-histories)
-[Historical financial news archive](https://www.kaggle.com/gennadiyr/us-equities-news-data)
-[Multiline chart](https://bl.ocks.org/LemoNode/a9dc1a454fdc80ff2a738a9990935e9d)
-[Brush & Zoom line chart](https://bl.ocks.org/EfratVil/92f894ac0ba265192411e73f633a3e2f)
-[Sankey Diagram with D3 v5](https://bl.ocks.org/d3noob/5ba21a90a721cb19a47ff14c9513e43a)
+- [Kaggle.com](https://www.kaggle.com/)
+- [AMEX, NYSE, and NASDAQ stocks histories](https://www.kaggle.com/qks1lver/amex-nyse-nasdaq-stock-histories)
+- [Historical financial news archive](https://www.kaggle.com/gennadiyr/us-equities-news-data)
+- [Multiline chart](https://bl.ocks.org/LemoNode/a9dc1a454fdc80ff2a738a9990935e9d)
+- [Brush & Zoom line chart](https://bl.ocks.org/EfratVil/92f894ac0ba265192411e73f633a3e2f)
+- [Sankey Diagram with D3 v5](https://bl.ocks.org/d3noob/5ba21a90a721cb19a47ff14c9513e43a)
