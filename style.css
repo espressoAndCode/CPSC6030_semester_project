@@ -42,6 +42,7 @@ pointer-events: all;
 .node text {
   pointer-events: none;
   text-shadow: 0 1px 0 #fff;
+  font-weight: bold;
 }
 
 .link {
@@ -72,15 +73,15 @@ pointer-events: all;
 }
 
 #bacchk {
-  background-color: #04D924;
+  background-color: #448C30;
 }
 
 #msftchk {
-  background-color: #F75C01;
+  background-color: #39403F;
 }
 
 #tslachk {
-  background-color: #A60303;
+  background-color: #D90B0B;
 }
 
 .colorbox {

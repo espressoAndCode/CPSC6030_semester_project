@@ -19,8 +19,8 @@ Promise.all([
 
   const windowInnerWidth = document.documentElement.clientWidth * 0.9;
   const windowInnerHeight = document.documentElement.clientHeight * 0.4;
-  const margin = { top: 50, right: 100, bottom: windowInnerHeight * 0.15, left: 80 };
-  const margin2 = { top: windowInnerHeight * 0.9, right: 100, bottom: 30, left: 80 };
+  const margin = { top: 50, right: 100, bottom: windowInnerHeight * 0.15, left: 100 };
+  const margin2 = { top: windowInnerHeight * 0.9, right: 100, bottom: 30, left: 100 };
   const width = windowInnerWidth - margin.left - margin.right;
   const height = windowInnerHeight - margin.top - margin.bottom;
   const height2 = windowInnerHeight - margin2.top - margin2.bottom;
@@ -57,7 +57,7 @@ Promise.all([
 
   var colorScheme = d3.scaleOrdinal()
     .domain(['AAPL', 'AMZN', 'BAC', 'MSFT', 'TSLA', 'News', 'Opinion'])
-    .range(["#0E79EB", "#19C7D4", "#04D924", "#F75C01", "#A60303", "#072775", "#AA3E27"]);
+    .range(["#0E79EB", "#19C7D4", "#448C30", "#39403F", "#D90B0B", "#072775", "#F2B366"]);
 
   var updateLinkData = async () => {
     links = [];
@@ -95,7 +95,6 @@ Promise.all([
     for (item in filteredData) {
       filteredArray.push({ id: item, values: filteredData[item] })
     }
-    console.log('filteredArray: ', filteredArray);
 
     count = 0;
     nodes = [];
@@ -116,7 +115,6 @@ Promise.all([
 
     Promise.all([updatedLinkData])
       .then(() => {
-        console.log('links: ', links);
         buildChart();
       })
       .then(() => {
@@ -143,6 +141,8 @@ Promise.all([
     var xAxis = d3.axisBottom(x),
       xAxis2 = d3.axisBottom(x2),
       yAxis = d3.axisLeft(y);
+
+
 
     var brush = d3.brushX()
       .extent([[0, 0], [width, height2]])
@@ -203,6 +203,14 @@ Promise.all([
     })]);
     x2.domain(x.domain());
     y2.domain(y.domain());
+
+    svg.append("text")
+    .attr("transform", "rotate(-90)")
+    .attr("y", -5 )
+    .attr("x",0 - (height / 2))
+    .attr("dy", "1em")
+    .style("text-anchor", "middle")
+    .text("Shares Traded per Day");  
 
     focus.append("g")
       .attr("class", "axis axis--x")
