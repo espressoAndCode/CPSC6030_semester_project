@@ -12,6 +12,11 @@ python3 server.py
 ## [Github Pages Link](https://espressoandcode.github.io/CPSC6030_semester_project/)
 Plaintext link: https://espressoandcode.github.io/CPSC6030_semester_project/
 
+## [Demo Video](https://drive.google.com/file/d/1uSG59iETGElt9DCRItAnUrCU6_o3F10p/view?usp=sharing)
+Plaintext link: https://drive.google.com/file/d/1uSG59iETGElt9DCRItAnUrCU6_o3F10p/view?usp=sharing
+
+Note - Video quality is better if you download and play on your desktop
+
 ## Datasets
 
 - [Historical financial news archive](https://www.kaggle.com/gennadiyr/us-equities-news-data)
