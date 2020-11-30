@@ -19,7 +19,9 @@ Note - Video quality is better if you download and play on your desktop
 ## Team Member Contributions
 
 Wes Bailey - D3 code development, video production
+
 Trupti Abnave - Research and data Exploration, Tableau
+
 Abubeker Abdullahi - 
 
 ## Datasets
