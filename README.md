@@ -18,11 +18,11 @@ Plaintext link: https://drive.google.com/file/d/1uSG59iETGElt9DCRItAnUrCU6_o3F10
 Note - Video quality is better if you download and play on your desktop
 ## Team Member Contributions
 
-Wes Bailey - D3 code development, video production
+Wes Bailey - D3 Code Development, Video Production
 
-Trupti Abnave - Research and data Exploration, Tableau
+Trupti Abnave - Research and Data Exploration, Tableau
 
-Abubeker Abdullahi - 
+Abubeker Abdullahi - Dataset Analysis, Visualization Design, and Literature Review
 
 ## Datasets
 
