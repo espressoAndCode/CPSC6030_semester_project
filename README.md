@@ -16,6 +16,11 @@ Plaintext link: https://espressoandcode.github.io/CPSC6030_semester_project/
 Plaintext link: https://drive.google.com/file/d/1uSG59iETGElt9DCRItAnUrCU6_o3F10p/view?usp=sharing
 
 Note - Video quality is better if you download and play on your desktop
+## Team Member Contributions
+
+Wes Bailey - D3 code development, video production
+Trupti Abnave - Research and data Exploration, Tableau
+Abubeker Abdullahi - 
 
 ## Datasets
 
