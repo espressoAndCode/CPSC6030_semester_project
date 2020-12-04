@@ -22,9 +22,9 @@ Plaintext link: https://drive.google.com/file/d/1uSG59iETGElt9DCRItAnUrCU6_o3F10
 
 Note - Video quality is better if you download and play on your desktop
 
-[Slide Deck](https://github.com/espressoAndCode/CPSC6030_semester_project/blob/main/Milestone_5_Slide_Deck.pdf)
+## [Slide Deck](https://github.com/espressoAndCode/CPSC6030_semester_project/blob/main/Milestone_5_Slide_Deck.pdf)
 
-[Project Report](https://github.com/espressoAndCode/CPSC6030_semester_project/blob/main/ProjectReport.pdf)
+## [Project Report](https://github.com/espressoAndCode/CPSC6030_semester_project/blob/main/ProjectReport.pdf)
 
 
 
