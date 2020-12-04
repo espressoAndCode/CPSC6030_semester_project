@@ -52,7 +52,7 @@ pointer-events: all;
 }
 
 .link:hover {
-  stroke: #00d;
+  stroke: #00f;
   stroke-opacity: .5;
 }
 

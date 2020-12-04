@@ -8,6 +8,11 @@ Please feel free to clone the repo if you would like to play around with this pr
 ```
 python3 server.py
 ```
+Then open a browser and navigate to:
+```
+localhost:5500
+```
+
 
 ## [Github Pages Link](https://espressoandcode.github.io/CPSC6030_semester_project/)
 Plaintext link: https://espressoandcode.github.io/CPSC6030_semester_project/

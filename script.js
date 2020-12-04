@@ -24,18 +24,20 @@ Promise.all([
   const width = windowInnerWidth - margin.left - margin.right;
   const height = windowInnerHeight - margin.top - margin.bottom;
   const height2 = windowInnerHeight - margin2.top - margin2.bottom;
-  const sankeyHeight = windowInnerHeight * .7;
+  const sankeyHeight = windowInnerHeight * 1.5;
 
 
   var minDate = d3.min(data, d => d.date);
   var maxDate = d3.max(data, d => d.date);
-  var minDateCopy = minDate;
-  var maxDateCopy = maxDate;
   var nodes = [];
   var links = [];
   var filteredData = {};
   var filteredArray = [];
   var nodeIdx = {};
+  updatingStockSel = 0;
+  selector_x_0 = width * 0.98;
+  selector_x_1 = width;
+
 
   function updateStockSelection() {
     var tickerSelections = document.querySelectorAll("input[name='ticker']:checked");
@@ -236,7 +238,7 @@ Promise.all([
     context2.append("g")
       .attr("class", "brush")
       .call(brush)
-      .call(brush.move, x.range());
+      .call(brush.move, [selector_x_0, selector_x_1]);
 
     context.append("path")
       .attr("class", "line")
@@ -252,10 +254,11 @@ Promise.all([
     function brushed() {
       if (d3.event.sourceEvent && d3.event.sourceEvent.type === "zoom") return; // ignore brush-by-zoom
       var s = d3.event.selection || x2.range();
+      selector_x_0 = s[0];
+      selector_x_1 = s[1];
       x.domain(s.map(x2.invert, x2));
-      minDate = formatDate(s.map(x2.invert, x2)[0]);
-      maxDate = formatDate(s.map(x2.invert, x2)[1]);
-
+        minDate = formatDate(s.map(x2.invert, x2)[0]);
+        maxDate = formatDate(s.map(x2.invert, x2)[1]);
       Line_chart.select(".line")
         .attr("d", function (d) {
           return line(d.values);
@@ -711,12 +714,12 @@ Promise.all([
   }
 
   document.getElementById("updateStocks").onclick = function () {
+    updatingStockSel = 1;
     document.getElementById("graph").innerHTML = "";
-    minDate = minDateCopy;
-    maxDate = maxDateCopy;
     updateStockSelection();
     updateLinkData();
     setInterval(minDate, maxDate);
+    updatingStockSel = 0;
   }
 
 
