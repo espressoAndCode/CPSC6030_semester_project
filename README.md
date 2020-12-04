@@ -21,6 +21,13 @@ Plaintext link: https://espressoandcode.github.io/CPSC6030_semester_project/
 Plaintext link: https://drive.google.com/file/d/1uSG59iETGElt9DCRItAnUrCU6_o3F10p/view?usp=sharing
 
 Note - Video quality is better if you download and play on your desktop
+
+[Slide Deck](https://github.com/espressoAndCode/CPSC6030_semester_project/blob/main/Milestone_5_Slide_Deck.pdf)
+
+[Project Report](https://github.com/espressoAndCode/CPSC6030_semester_project/blob/main/ProjectReport.pdf)
+
+
+
 ## Team Member Contributions
 
 Wes Bailey - D3 Code Development, Video Production
